@@ -8,6 +8,7 @@
 
     <title>Termovac | Página inicial</title>
 
+    <script type="text/javascript" src="home.js"></script>
     <script src="./js/funcoes.js"></script>
 
     <link rel="icon" href="./assets/LOGO2.png">
@@ -215,40 +216,5 @@
 
     }*/
 
-window.load = slide(1);
 
-var bgNumber = 1;
-
-function slide(n) {
-    var allBgs = 4;
-    
-    document.getElementByIdsBy('imageBg').style.backgroundImage = "url('images/"+n+".png')";
-    botoes(n, allBgs);
-    bgNumber = n;
-}
-
-function anterior(){
-    if(bgNumber > 1){
-        bgNumber--;
-        slide(bgNumber);
-    }
-}
-
-function proximo(){
-    if(bgNumber < 5){
-        bgNumber++;
-        slide(bgNumber);
-    }
-}
-
-function botoes(n, m){
-    document.getElementById('botoes').innerHTML = "";
-    for(a = 1; a <= m; a++){
-        if(a==n){
-            document.getElementById('botoes').innerHTML += "<li class='selected' onclick='slide("+a+")'></li>";
-        } else {
-            document.getElementById('botoes').innerHTML += "<li onclick='slide("+a+")'></li>";
-        }
-    }
-}
 </script>
