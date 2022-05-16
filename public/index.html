@@ -46,16 +46,47 @@
     <div id="espacamento">
 
     </div>
+    <center>
+        <div class="banner">
 
-    <div class="banner">
-        <div class="cont">
-            <div id="img"><img src="./assets/1.jpg" alt=""></div>
-            <div id="img"><img src="./assets/2.jpg" alt=""></div>
-            <div id="img"><img src="./assets/3.jpg" alt=""></div>
-            <div id="img"><img src="./assets/4.jpg" alt=""></div>
+            <div class="div_slide_show">
+
+                <div class="contençao">
+                    <div id="imageBg"></div>
+                    <div class="anterior" onclick="anterior()"><b><-</b>
+                    </div>
+                    <div class="proximo" onclick="proximo()"><b>-></b></div>
+                </div>
+
+                <nav>
+                    <ul id="botoes">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </nav>
+            </div>
+            
+           <!-- <div class="cont">
+                <div class="img"><img src="./assets/vinhos.sem.png" style="height: 450px"></div>
+            </div>
+            <div class="cont">
+                <div class="img"><img src="./assets/kit1.png" style="height: 450px"></div>
+            </div>
+            <div class="cont">
+                <div class="img"><img src="./assets/kit2.png" style="height: 450px"></div>
+            </div>
+            <div class="cont">
+                <div class="img"><img src="./assets/kit3.png" style="height: 450px"></div>
+            </div>
+
+            <div class="button_cont">
+                <img onclick="moverDireita()" class="carroselButton nextButton" src="./assets/seta_direita.png" alt="">
+                <img onclick="moverEsquerda()" class="carroselButton prevButton none" src="./assets/seta_esquerda.png"
+                    alt="">
+            </div> -->
+
         </div>
-    </div>
-
+    </center>
     <div id="titulo_social">
         <b id="title_social">NOSSOS PILARES</b>
     </div>
@@ -115,7 +146,8 @@
     <div class="footer">
         <div class="container">
             <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®<br>
-                    <span class="texto_footer" style="color:black">"O calor é para todos, o frio para poucos. Mas o controle é nosso!"</span>
+                    <span class="texto_footer" style="color:black">"O calor é para todos, o frio para poucos. Mas o
+                        controle é nosso!"</span>
                 </span></h1>
         </div>
     </div>
@@ -125,23 +157,101 @@
 </html>
 
 <script>
-    document.querySelector(".cont")
-        .addEventListener("wheel", function () {
-            if (event.deltaY > 0) {
-                event.target.scrollBy(-1280, 0)
-
-            } else {
-                event.target.scrollBy(1280, 0)
-            }
-        })
-
-
 
     function enviar() {
-        if(in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
+        if (in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
             alert("E-mail enviado. Agradecemos o vosso contato")
         } else {
             alert("Preencha os campos corretamente.")
         }
     }
+
+    // Carrosel
+    var click = 1
+
+    function moverEsquerda() {
+        var card = document.getElementsByClassName('cont')
+        var prevButton = document.getElementsByClassName('prevButton')
+
+        if (click == 2) {
+            for (var contador = 0; contador <= card.length - 1; contador++) {
+                card[contador].style.transform = "translateX(0px)";
+                prevButton[0].classList.add('none')
+            }
+            click--
+        }
+        if (click == 3) {
+            for (var contador = 0; contador <= card.length - 1; contador++) {
+                card[contador].style.transform = "translateX(-800px)";
+            }
+            click--
+        }
+
+    }
+
+    function moverDireita() {
+        var card = document.getElementsByClassName('cont')
+        var prevButton = document.getElementsByClassName('prevButton')
+
+        if (click <= 2) {
+            if (click == 1) {
+                for (var contador = 0; contador <= card.length - 1; contador++) {
+                    card[contador].style.transform = "translateX(-950px)";
+                    prevButton[0].classList.remove('none');
+                }
+            }
+            if (click > 1) {
+                for (var contador = 0; contador <= card.length - 1; contador++) {
+                    card[contador].style.transform = "translateX(-1350px)";
+                }
+            }
+            click++
+        } else {
+            for (var contador = 0; contador <= card.length - 1; contador++) {
+                card[contador].style.transform = "translateX(0px)";
+                prevButton[0].classList.add('none')
+
+                click = 0
+            }
+            click++
+        }
+
+    }
+
+    window.load = slide(1);
+
+var bgNumber = 1;
+
+function slide(n) {
+    var allBgs = 4;
+    
+    document.getElementById('imageBg').style.backgroundImage = "url('images/"+n+".jpg')";
+    botoes(n, allBgs);
+    bgNumber=n;
+}
+
+function anterior(){
+    if(bgNumber>1){
+        bgNumber--;
+        slide(bgNumber);
+    }
+}
+
+function proximo(){
+    if(bgNumber<10){
+        bgNumber++;
+        slide(bgNumber);
+    }
+}
+
+function botoes(n, m){
+    document.getElementById('botoes').innerHTML = "";
+    for(a = 1; a <= m; a++){
+        if(a==n){
+            document.getElementById('botoes').innerHTML += "<li class='selected' onclick='slide("+a+")'></li>";
+        } else {
+            document.getElementById('botoes').innerHTML += "<li onclick='slide("+a+")'></li>";
+        }
+    }
+}
 </script>
