@@ -136,23 +136,6 @@ body #espacamento {
 
 /* início do slideshow! */
 
-.div_slide_show {
-  background-color: #7B1A1A;
-  margin: 0px 0 0 0;
-  padding: 86px 0 0 0;
-  height: 563px;
-}
-
-.span_barra2 {
-  background-color: white;
-  height: 8px;
-  width: 225px;
-  display: inline;
-  float: left;
-  margin: 5px 0px 0 -217px;
-  padding: 0px 0 0 0;
-}
-
 .contençao {
   width: 693px;
   height: 463px;

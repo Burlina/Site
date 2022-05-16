@@ -46,16 +46,14 @@
     <div id="espacamento">
 
     </div>
-    <center>
-        <div class="banner">
 
-            <div class="div_slide_show">
+        <div class="banner">
 
                 <div class="contençao">
                     <div id="imageBg"></div>
-                    <div class="anterior" onclick="anterior()"><b><-</b>
+                    <div class="anterior" onclick="anterior()"><b><</b>
                     </div>
-                    <div class="proximo" onclick="proximo()"><b>-></b></div>
+                    <div class="proximo" onclick="proximo()"><b>></b></div>
                 </div>
 
                 <nav>
@@ -64,8 +62,7 @@
                         <li></li>
                     </ul>
                 </nav>
-            </div>
-            
+
            <!-- <div class="cont">
                 <div class="img"><img src="./assets/vinhos.sem.png" style="height: 450px"></div>
             </div>
@@ -86,7 +83,7 @@
             </div> -->
 
         </div>
-    </center>
+
     <div id="titulo_social">
         <b id="title_social">NOSSOS PILARES</b>
     </div>
@@ -166,7 +163,7 @@
         }
     }
 
-    // Carrosel
+    /* Carrosel
     var click = 1
 
     function moverEsquerda() {
@@ -216,29 +213,29 @@
             click++
         }
 
-    }
+    }*/
 
-    window.load = slide(1);
+window.load = slide(1);
 
 var bgNumber = 1;
 
 function slide(n) {
     var allBgs = 4;
     
-    document.getElementById('imageBg').style.backgroundImage = "url('images/"+n+".jpg')";
+    document.getElementByIdsBy('imageBg').style.backgroundImage = "url('images/"+n+".png')";
     botoes(n, allBgs);
-    bgNumber=n;
+    bgNumber = n;
 }
 
 function anterior(){
-    if(bgNumber>1){
+    if(bgNumber > 1){
         bgNumber--;
         slide(bgNumber);
     }
 }
 
 function proximo(){
-    if(bgNumber<10){
+    if(bgNumber < 5){
         bgNumber++;
         slide(bgNumber);
     }
