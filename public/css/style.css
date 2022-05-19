@@ -12,7 +12,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow-x: hidden;
   background-image: url(../assets/fundo.png);
-  scroll-behavior: smooth;
 }
 
 .b_corpo{
@@ -26,11 +25,13 @@ height: 100%;
 }
 
 .header {
-  border-bottom: 3px solid #32b9cd;
+  border-bottom: 3px solid #000000;
   background-color: #ffffff;
   width: 100vw;
   height: 15vh;
   position: fixed;
+  background-image: url(../assets/fundo.png);
+  z-index: 1000;
 }
 
 .header .container {
@@ -46,7 +47,7 @@ height: 100%;
 
 .agora {
   font-weight: 650;
-  color: #44e6ff;
+  color: #000000;
 }
 
 .navbar {
@@ -55,11 +56,11 @@ height: 100%;
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #32b9cd;
+  color: #000000;
 }
 
 #faleconosco {
-  background-color: #44e6ff;
+  background-color: #000000;
   padding: 1.5%;
   border-radius: 100px;
   margin-left: 3%;
@@ -72,11 +73,10 @@ li:hover {
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #000000;
   width: fit-content;
   font-weight: 500;
   font-size: 35px;
-  background-color: white;
 }
 
 body #espacamento {
@@ -84,36 +84,47 @@ body #espacamento {
 }
 
 .banner {
-  height: 550px;
+  background-color: #ffffffd0;
+  padding-top: 55px;
+  height: 500px;
   display: flex;
   width: 100%;
   overflow: hidden;
   justify-content: center;
+  border-bottom: 3px solid #000000;
 }
 
-.cont {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+.cont center{
+display: flex;
 }
 
-#img {
-  scroll-snap-align: start;
-  pointer-events: none;
-  object-fit: cover;
-
+.imgFoto{
+  transform: translateX(200%);
+  width: 100vw;
 }
 
-.cont #img {
-  margin-top: 50px;
-  width: 1485px;
+#seta1{
+  position: absolute;
+  top: 316px;
+  z-index: 31;
+  left: 1%;
+  height: 176px;
+  cursor: pointer;
+}
+
+#seta2
+{
+  position: absolute;
+    top: 316px;
+    z-index: 31;
+    right: 1%;
+    height: 176px;
+    cursor: pointer;
 }
 
 #titulo_social {
   display: flex;
   justify-content: center;
-  background: white;
   border-bottom: 1px solid black;
   font-family: monospace;
 }
@@ -128,11 +139,10 @@ body #espacamento {
 /* MISSAO VISAO VALORES */
 
 .social {
-  background-color: #ffffff;
   display: flex;
   width: 100vw;
   color: rgb(0, 0, 0);
-  border-bottom: 3px solid #32b9cd;
+  border-bottom: 1px solid black;
 }
 
 .social .container {
@@ -175,23 +185,25 @@ body #espacamento {
 
 .social_exp {
   width: 100%;
+  background-color: #ffffffd0;
   display: flex;
-  background-image: url(../assets/fundo.png);
   flex-direction: column;
 }
 
 .social_cont {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 4%;
+  margin-bottom: 4%;
   margin-left: 20%;
   height: 60%;
   width: 60%;
   display: flex;
-  background-color: #ffffff;
+  background-image: url(../assets/fundo.png);
   border-radius: 20px;
+  border: 3px solid #000000;
   padding: 20px;
   justify-items: center;
   align-items: center;
+  box-shadow: 1px 1px 6px #000000;
 }
 
 .conteudo {
@@ -233,7 +245,7 @@ text-align: center;
   margin-top: 10px;
   border: 0;
   font-weight: 600;
-  background-color: #32b9cd;
+  background-color: #000000;
   color: white;
   font-size: 18px;
   border-radius: 4px;
@@ -246,8 +258,8 @@ text-align: center;
 /* FOOTER */
 
 .footer {
-  border-top: 5px solid #32b9cd;
-  background-color: white;
+  border-top: 3px solid #000000;
+  background-image: url(../assets/fundo.png);
   height: 20vh;
   color: black;
   display: flex;
@@ -279,7 +291,7 @@ text-align: center;
   height: 80%;
   margin: auto;
   display: flex;
-  color: #32b9cd;
+  color: #000000;
 }
 
 .bannerLog {
@@ -289,7 +301,7 @@ text-align: center;
 }
 
 .card h2 {
-  color: #32b9cd;
+  color: #000000;
   margin-top: 0px;
 }
 
@@ -343,7 +355,7 @@ button {
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #32b9cd 3px solid;
+  border: #000000 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -370,7 +382,7 @@ button {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #000000;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -384,7 +396,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #32b9cd;
+  background-color: #000000;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -424,7 +436,7 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid #000000;
   background-color: #ffffff;
   /* border: 3px solid pink; */
 }
@@ -440,7 +452,7 @@ input {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #000000;
 }
 
 .hello {
@@ -450,7 +462,7 @@ input {
 }
 
 .hello h3 {
-  color:#32b9cd;
+  color:#000000;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -462,7 +474,7 @@ input {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #32b9cd;
+  background-color: #000000;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -471,14 +483,14 @@ input {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #32b9cd;
+  border: 3px solid #000000;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #32b9cd;
+  color: #000000;
   padding: 0;
   margin: 0;
 }
@@ -493,7 +505,7 @@ input {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #000000;
   color: white;
   border-radius: 10px;
   text-align: center;
@@ -505,7 +517,7 @@ input {
 /*SIMULADOR FINANCEIRO*/
 
 .botao_simulador {
-  background-color:rgb(0, 195, 255);
+  background-color:rgba(0, 0, 0, 0.264);
   padding: 1%;
   border-radius: 20px;
 }
@@ -628,7 +640,7 @@ input {
 }
 
 select {
-  border: #32b9cd 1px solid;
+  border: #000000 1px solid;
 }
 
 button {
@@ -648,8 +660,8 @@ button:hover {
 
 
 .headerCad {
-  border-bottom: 3px solid #32b9cd;
-  background-color: #ffffff;
+  border-bottom: 3px solid #000000;
+  background-image: url(../assets/fundo.png);
   width: 100vw;
   height: 15vh;
   position: fixed;
@@ -681,7 +693,7 @@ button:hover {
 .container_tamanho-conteudo {
   margin: auto;
   display: flex;
-  color: #32b9cd;
+  color: #000000;
 }
 
 .formulario h2 {
@@ -728,7 +740,7 @@ button:hover {
   margin-top: 10px;
   border: 0;
   font-weight: 600;
-  background-color: #32b9cd;
+  background-color: #000000;
   color: white;
   font-size: 18px;
   border-radius: 4px;
@@ -773,7 +785,7 @@ button:hover {
   align-items: center;
   color: black;
   text-align: justify;
-  box-shadow: 1px 1px 6px #00ffc8;
+  box-shadow: 1px 1px 6px #000000;
   justify-content: center;
 }
 
@@ -785,7 +797,7 @@ button:hover {
 .title {
   text-align: center;;
   font-size: 1.8em;
-  color: #32B9CD;
+  color: #000000;
   width: 100%;
 }
 
@@ -827,7 +839,7 @@ button:hover {
   background-color: white;
   margin: 50px;
   transition: all 0.5s;
-  box-shadow: 1px 1px 6px #00ffc8;
+  box-shadow: 1px 1px 6px #000000;
 
 }
 
@@ -836,7 +848,7 @@ button:hover {
   position: absolute;
   height: 33%;
   width: 100%;
-  background-color: #32b9cd;
+  background-color: #000000;
   border-radius: 24px 24px 0 0;
 }
 
@@ -913,7 +925,7 @@ button:hover {
 }
 
 .footerSob {
-  background-color: #32b9cd;
+  background-color: #000000;
   height: 20vh;
   color: white;
   display: flex;
